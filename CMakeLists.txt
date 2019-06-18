@@ -1,8 +1,7 @@
-cmake_minimum_required(VERSION 3.14)
-project(ft_printf C)
+aux_source_directory(./src/list list_src)
+aux_source_directory(./src/string string_src)
+aux_source_directory(./src/printf printf_src)
 
-set(CMAKE_C_STANDARD 99)
-add_subdirectory(libft)
-include_directories(libft/include)
-add_executable(ft_printf main.c)
-target_link_libraries(ft_printf libft_lib)
+
+include_directories(include)
+add_library(libft_lib ${list_src} ${string_src} ${printf_src})
