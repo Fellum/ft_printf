@@ -17,36 +17,28 @@
 # define D_MANT 52
 # define LD_MANT 63
 
-typedef union {
-	float f;
-	struct {
-		unsigned int mant : F_MANT;
-		unsigned int exp : 8;
-		unsigned int sign : 1;
-	} parts;
-} float_cast;
+typedef union			u_double_cast
+{
+	double				f;
+	struct
+	{
+		unsigned long	mant : D_MANT;
+		unsigned long	exp : 11;
+		unsigned int	sign : 1;
+	}					parts;
+}						t_double_cast;
 
-typedef union {
-	double f;
-	struct {
-		unsigned long mant : D_MANT;
-		unsigned long exp : 11;
-		unsigned int sign : 1;
-	} parts;
-} double_cast;
+typedef union			u_ldouble_cast{
+	long double			f;
+	struct
+	{
+		unsigned long	mant : LD_MANT;
+		unsigned long	exp : 15;
+		unsigned int	sign : 1;
+	}					parts;
+}						t_ldouble_cast;
 
-typedef union {
-	long double f;
-	struct {
-		unsigned long mant : LD_MANT;
-		unsigned long exp : 15;
-		unsigned int sign : 1;
-	} parts;
-} ldouble_cast;
-
-
-#define F_MASK 0x00400000
-#define D_MASK 0x0008000000000000
-#define LD_MASK 0x4000000000000000
-
+# define F_MASK 0x00400000
+# define D_MASK 0x0008000000000000
+# define LD_MASK 0x4000000000000000
 #endif

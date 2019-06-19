@@ -18,7 +18,6 @@ add_executable(dasha_printf
     include/ft_string.h
     include/large_arythmetics.h
     include/libft.h
-    include/misc.h
     src/list/ft_create_node.c
     src/list/ft_lstadd.c
     src/list/ft_lstnew.c
@@ -27,21 +26,17 @@ add_executable(dasha_printf
     src/printf/convert_flags.c
     src/printf/d_conversions.c
     src/printf/f_conversion.c
-    src/printf/fill_with_chars.c
+        src/string/fill_with_chars.c
     src/printf/float_to_str.c
     src/printf/ft_after_num.c
     src/printf/ft_before_num.c
-    src/printf/ft_bzero.c
+        src/string/ft_bzero.c
     src/printf/ft_itoa_base.c
     src/printf/ft_itoa_base_hex..c
     src/printf/ft_itoa_base_hex_long.c
-    src/printf/ft_memdel.c
-    src/printf/ft_memset.c
-    src/printf/ft_numlgh.c
-    src/printf/ft_numlgh_long.c
+        src/string/ft_memset.c
+
     src/printf/ft_printf.c
-    src/printf/ft_putnbr.c
-    src/printf/ft_putnbr_u.c
     src/printf/get_conv_glags.c
     src/printf/get_conversion.c
     src/printf/get_flags.c
@@ -49,7 +44,6 @@ add_executable(dasha_printf
     src/printf/get_sizes.c
     src/printf/large_arythmetics.c
     src/printf/make_double.c
-    src/printf/make_float.c
     src/printf/make_ldouble.c
     src/printf/mod_conversions.c
     src/printf/o_conversions.c
@@ -70,4 +64,4 @@ add_executable(dasha_printf
     src/string/ft_strsub.c
         src/string/ft_strappend.c
 
-    main.c src/string/ft_realloc.c)
+    main.c src/string/ft_realloc.c main.c)

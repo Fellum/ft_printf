@@ -27,32 +27,12 @@ int		f_conversions(t_params ft, va_list *args, t_list **lst)
 	arg_val = get_float(ft, args);
 	str_len = ft_strlen(arg_val);
 	space_char = (ft.flags & ZERO_FLAG) && !(ft.flags & MINUS_FLAG) ? '0' : ' ';
-	spaces = ft.field_width - ((str_len > ft.precision) ? str_len : ft.precision);
-	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces;
-	if (!(str = (char *)malloc(sizeof(char) * spaces + 1)))
-		free(str);
-	else
-	{
-		str[spaces + 1] = '\0';
-		while (spaces >= 0)
-			str[spaces--] = space_char;
-		if ((tmp = create_node(str, ft_strlen(str), lst)) == -1)
-			return (tmp);
-	}
-	create_node(arg_val, str_len, lst);
+	spaces = (ft.flags & MINUS_FLAG) ? 0 : ft.field_width - str_len;
+	str = fill_with_chars(spaces, space_char);
+	if (!(ft.flags & MINUS_FLAG))
+		create_node(str, spaces > 0 ? spaces + 1 : 0, lst);
+	create_node(arg_val, str_len + 1, lst);
 	if (ft.flags & MINUS_FLAG)
-	{
-		spaces = ft.field_width - ((str_len > ft.precision) ? str_len : ft.precision);
-		if (!(str = (char *)malloc(sizeof(char) * spaces + 1)))
-			free(str);
-		else
-		{
-			str[spaces + 1] = '\0';
-			while (spaces >= 0)
-				str[spaces--] = space_char;
-			if ((tmp = create_node(str, ft_strlen(str), lst)) == -1)
-				return (tmp);
-		}
-	}
+		create_node(str, spaces > 0 ? spaces + 1 : 0, lst);
 	return (tmp);
 }

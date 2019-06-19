@@ -16,10 +16,12 @@
 char	*get_float(t_params params, va_list *args)
 {
 	int precision;
+	char	*res;
 
 	precision = params.precision == -1 ? 6 : params.precision;
 	if (params.flags & L_FLAG)
-		return (make_ldouble(va_arg(*args, double), precision));
+		res = (make_ldouble(va_arg(*args, long double), precision));
 	else
-		return (make_double(va_arg(*args, double), precision));
+		res = (make_double(va_arg(*args, double), precision));
+	return (res);
 }

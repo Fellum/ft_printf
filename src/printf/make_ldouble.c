@@ -73,7 +73,7 @@ unsigned	*fill_integer_ld(unsigned long mask, int exp, unsigned long mant)
 
 char		*make_ldouble(long double val, int precision)
 {
-	ldouble_cast	tmp;
+	t_ldouble_cast	tmp;
 	unsigned		*integer_part;
 	unsigned		*float_part;
 	char			*res;

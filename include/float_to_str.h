@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_FLOAT_FLOAT_TO_STR_H
-#define PRINT_FLOAT_FLOAT_TO_STR_H
-void	append_string(char **res, char *str);
-char 	*float_part_to_str(unsigned *longnum, int precision);
-char 	*int_part_to_str(unsigned *longnum);
+#ifndef FLOAT_TO_STR_H
+# define FLOAT_TO_STR_H
 
+void	append_string(char **res, char *str);
+char	*float_part_to_str(unsigned *longnum, int precision);
+char	*int_part_to_str(unsigned *longnum);
 #endif

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EXPANDABLE_STRING_FT_LIST_H
-# define EXPANDABLE_STRING_FT_LIST_H
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
 # include <stddef.h>
 
