@@ -12,16 +12,18 @@
 #include "misc.h"
 #include "ft_list.h"
 
-# define HASH_FLAG 1
-# define PLUS_FLAG 2
-# define MINUS_FLAG 4
-# define SPACE_FLAG 8
-# define ZERO_FLAG 16
-# define l_FLAG 32
-# define ll_FLAG 64
-# define h_FLAG 128
-# define hh_FLAG 256
-# define L_FLAG 512
+# define HASH_FLAG 1U
+# define PLUS_FLAG 2U
+# define MINUS_FLAG 4U
+# define SPACE_FLAG 8U
+# define ZERO_FLAG 16U
+# define l_FLAG 32U
+# define ll_FLAG 64U
+# define h_FLAG 128U
+# define hh_FLAG 256U
+# define L_FLAG 512U
+# define Z_FLAG 1024U
+# define J_FLAG 2048U
 
 typedef struct		s_params
 {

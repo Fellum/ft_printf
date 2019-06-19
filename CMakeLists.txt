@@ -68,4 +68,6 @@ add_executable(dasha_printf
     src/string/ft_strncpy.c
     src/string/ft_strnew.c
     src/string/ft_strsub.c
-    main.c)
+        src/string/ft_strappend.c
+
+    main.c src/string/ft_realloc.c)

@@ -63,6 +63,19 @@ void	main_loop(const char *format, va_list *args, t_list *res_lst)
 	}
 }
 
+size_t calc_string_len(t_list *lst)
+{
+	size_t sum_length;
+
+	sum_length = 0;
+	while (lst)
+	{
+		sum_length += lst->content_size ? lst->content_size - 1 : 0;
+		lst = lst->next;
+	}
+	return (sum_length);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list		args;
@@ -74,7 +87,7 @@ int	ft_printf(const char *format, ...)
 	res_lst = ft_lstnew(NULL, 0);
 	main_loop(format, &args, res_lst);
 	tmp_str = ft_lst_to_str(res_lst);
-	res = write(1, tmp_str, ft_strlen(tmp_str));
+	res = write(1, tmp_str, calc_string_len(res_lst));
 	if (res_lst->content)
 		free_lst(res_lst);
 	free(tmp_str);

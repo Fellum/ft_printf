@@ -1,3 +1,0 @@
-/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/CMakeFiles/dasha_printf.dir

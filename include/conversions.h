@@ -16,6 +16,6 @@ int			p_conversions(t_params ft, va_list *args, t_list **lst);
 int			mod_conversions(t_params ft, t_list **lst);
 
 long long	convert_flags(int flags, va_list *args);
-unsigned long long int	convert_flags_u(int flags, va_list *args);
+intmax_t	convert_flags_u(int flags, va_list *args);
 
 #endif //FT_PRINTF_CONVERSIONS_H

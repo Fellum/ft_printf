@@ -14,14 +14,18 @@
 #include "conversions.h"
 #include <unistd.h>
 
-unsigned long long int	convert_flags_u(int flags, va_list *args)
+intmax_t	convert_flags_u(int flags, va_list *args)
 {
-	unsigned long long int	n;
+	intmax_t	n;
 
 	if (flags & l_FLAG)
 		n = va_arg(*args, unsigned long);
 	else if (flags & ll_FLAG)
 		n = va_arg(*args, unsigned long long);
+	else if (flags & Z_FLAG)
+		n = va_arg(*args, size_t);
+	else if (flags & J_FLAG)
+		n = va_arg(*args, intmax_t);
 	else
 		n = va_arg(*args, unsigned int);
 	if (flags & h_FLAG)

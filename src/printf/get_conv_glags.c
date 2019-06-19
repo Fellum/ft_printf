@@ -5,7 +5,7 @@
 
 int is_conv_flag(char c)
 {
-	return (c == 'l' || c == 'L' || c == 'h');
+	return (c == 'l' || c == 'L' || c == 'h' || c == 'j' || c == 'z');
 }
 
 
@@ -44,6 +44,10 @@ unsigned get_conv_flags(const char **format)
 			res |= comp_flag_hh(format);
 		else if (**format == 'L')
 			res |= L_FLAG;
+		else if (**format == 'z')
+			res |= Z_FLAG;
+		else if (**format == 'j')
+			res |= J_FLAG;
 		(*format)++;
 	}
 	return (res);
