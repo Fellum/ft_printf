@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 16:26:13 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/13 16:21:29 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 19:55:38 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		u_conversions(t_params ft, va_list *args, t_list **lst)
 
 	res = 0;
 	arg_val = convert_flags_u(ft.flags, args);
-	if (ft.flags & l_FLAG || ft.flags & ll_FLAG)
+	if (ft.flags & LO_FLAG || ft.flags & LLO_FLAG)
 		num = ft_itoa_base_hex_long(arg_val, 10, (ft.conversion == 'x') ? 0 : 1);
 	else
 		num = ft_itoa_base_hex(arg_val, 10, (ft.conversion == 'x') ? 0 : 1);

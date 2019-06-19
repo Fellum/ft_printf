@@ -1,13 +1,21 @@
-//
-// Created by Jasper Leann on 2019-06-04.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   floats.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 19:28:10 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/06/19 19:28:25 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PRINT_FLOAT_FLOATS_H
-#define PRINT_FLOAT_FLOATS_H
+# define PRINT_FLOAT_FLOATS_H
 
-#define F_MANT 23
-#define D_MANT 52
-#define LD_MANT 63
+# define F_MANT 23
+# define D_MANT 52
+# define LD_MANT 63
 
 typedef union {
 	float f;
@@ -41,4 +49,4 @@ typedef union {
 #define D_MASK 0x0008000000000000
 #define LD_MASK 0x4000000000000000
 
-#endif //PRINT_FLOAT_FLOATS_H
+#endif

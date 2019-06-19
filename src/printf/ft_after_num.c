@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_after_num.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 19:31:59 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/06/19 19:33:00 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 #include "conversions.h"
@@ -6,16 +17,17 @@
 
 int		ft_after_num(t_params ft, int str_len, t_list **lst, int hash)
 {
-    char 	*str;
+	char	*str;
 	int		i;
 	int		spaces;
 
 	i = 0;
-	spaces = ft.field_width - ((ft.precision > str_len) ? ft.precision : str_len) - hash;
+	spaces = ft.field_width - ((ft.precision > str_len) ?
+				ft.precision : str_len) - hash;
 	if ((ft.flags & MINUS_FLAG) && (ft.field_width > ft.precision))
 	{
 		if (!(str = (char *)malloc(sizeof(char) * (spaces + 1))))
-            return (-1);
+			return (-1);
 		while (i < spaces)
 			str[i++] = ' ';
 		str[i] = '\0';

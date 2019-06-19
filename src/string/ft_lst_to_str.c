@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lst_to_str.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 19:42:28 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/06/19 19:42:49 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_list.h"
 #include "ft_string.h"
 
-static size_t calc_string_len(t_list *lst)
+static size_t	calc_string_len(t_list *lst)
 {
 	size_t sum_length;
 
@@ -22,7 +34,7 @@ char	*ft_lst_to_str(t_list *lst)
 
 	sum_length = calc_string_len(lst);
 	if (!(res = ft_strnew(sum_length)))
-		return NULL;
+		return (NULL);
 	cur = 0;
 	while (lst)
 	{

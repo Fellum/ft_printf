@@ -6,25 +6,24 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 15:24:04 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/13 16:02:40 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 20:05:33 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include "conversions.h"
 #include "ft_printf.h"
-#include "ft_list.h"
 
 int		print_conversion(t_params formating, va_list *args, t_list **lst)
 {
 	if (formating.conversion == 'c')
 		return (c_conversions(formating, args, lst));
 	else if (formating.conversion == '%')
-	 	return (mod_conversions(formating, lst));
+		return (mod_conversions(formating, lst));
 	else if (formating.conversion == 'd' || formating.conversion == 'i')
 		return (d_conversions(formating, args, lst));
 	else if (formating.conversion == 's')
-	 	return (s_conversions(formating, args, lst));
+		return (s_conversions(formating, args, lst));
 	else if (formating.conversion == 'x' || formating.conversion == 'X')
 		return (x_conversions(formating, args, lst));
 	else if (formating.conversion == 'o')

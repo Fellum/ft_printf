@@ -6,13 +6,13 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 12:34:08 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/04 16:06:37 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 20:10:32 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	size_t	intlen(long long int n, int base)
+static size_t	intlen(long long int n, int base)
 {
 	size_t len;
 
@@ -25,7 +25,7 @@ static	size_t	intlen(long long int n, int base)
 	return (len);
 }
 
-char			*ft_itoa_base(long long int n, int base, int uppercase)
+char			*ft_itoa_base(long long n, int bs, int up)
 {
 	char	*res;
 	long	len;
@@ -35,8 +35,8 @@ char			*ft_itoa_base(long long int n, int base, int uppercase)
 	i = 0;
 	if (n == 0)
 		return (ft_strdup("0"));
-	barr = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
-	len = intlen(n, base);
+	barr = up ? "0123456789ABCDEF" : "0123456789abcdef";
+	len = intlen(n, bs);
 	res = ft_strnew(len);
 	i = len;
 	if (n <= -9223372036854775807)
@@ -45,14 +45,13 @@ char			*ft_itoa_base(long long int n, int base, int uppercase)
 		res[0] = '9';
 		len--;
 	}
-	if  (n < 0)
-		n = -n;
+	n = (n < 0) ? -n : n;
 	if (!res)
 		return (NULL);
 	while (len--)
 	{
-		res[--i] = barr[(n % base)];
-		n /= base;
+		res[--i] = barr[(n % bs)];
+		n /= bs;
 	}
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:18:31 by jleann            #+#    #+#             */
-/*   Updated: 2019/06/12 20:18:49 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 19:38:07 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include "ft_list.h"
 #include "ft_string.h"
 
-
-void	free_lst(t_list *lst)
+void		free_lst(t_list *lst)
 {
 	t_list	*tmp;
 
@@ -29,7 +28,7 @@ void	free_lst(t_list *lst)
 	}
 }
 
-void	print_arg(const char **format, va_list *args, t_list **lst)
+void		print_arg(const char **format, va_list *args, t_list **lst)
 {
 	t_params	formating;
 
@@ -42,9 +41,7 @@ void	print_arg(const char **format, va_list *args, t_list **lst)
 	print_conversion(formating, args, lst);
 }
 
-
-
-void	main_loop(const char *format, va_list *args, t_list *res_lst)
+void		main_loop(const char *format, va_list *args, t_list *res_lst)
 {
 	const char	*tmp;
 	t_list		*last_lst;
@@ -63,7 +60,7 @@ void	main_loop(const char *format, va_list *args, t_list *res_lst)
 	}
 }
 
-size_t calc_string_len(t_list *lst)
+size_t		calc_string_len(t_list *lst)
 {
 	size_t sum_length;
 
@@ -76,12 +73,12 @@ size_t calc_string_len(t_list *lst)
 	return (sum_length);
 }
 
-int	ft_printf(const char *format, ...)
+int			ft_printf(const char *format, ...)
 {
 	va_list		args;
 	t_list		*res_lst;
-	char 		*tmp_str;
-	int 		res;
+	char		*tmp_str;
+	int			res;
 
 	va_start(args, format);
 	res_lst = ft_lstnew(NULL, 0);

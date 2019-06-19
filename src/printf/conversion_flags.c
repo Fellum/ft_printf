@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 17:39:02 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/07 15:19:57 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 20:08:25 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ long long	convert_flags(int flags, va_list *args)
 {
 	long long	n;
 
-	if (flags & l_FLAG)
+	if (flags & LO_FLAG)
 		n = va_arg(*args, long);
-	else if (flags & ll_FLAG)
+	else if (flags & LLO_FLAG)
 		n = va_arg(*args, long long);
 	else
 		n = va_arg(*args, int);
-	if (flags & h_FLAG)
+	if (flags & H_FLAG)
 		n = (short)n;
-	else if (flags & hh_FLAG)
+	else if (flags & HH_FLAG)
 		n = (signed char)n;
 	return (n);
 }

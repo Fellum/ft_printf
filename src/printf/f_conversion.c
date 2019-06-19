@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   s_conversion.c                                     :+:      :+:    :+:   */
+/*   f_conversion.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 19:18:58 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/03 19:33:09 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 19:31:44 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "ft_string.h"
 #include <stdlib.h>
-
-char	*get_float(t_params params, va_list *args);
 
 int		f_conversions(t_params ft, va_list *args, t_list **lst)
 {

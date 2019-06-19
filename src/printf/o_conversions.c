@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 12:28:10 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/13 15:17:24 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 20:04:53 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "conversions.h"
 #include "libft.h"
 
-void		ft_oconversions(t_params ft, int str_len, t_list **lst, int *tmp)
+void	ft_oconversions(t_params ft, int str_len, t_list **lst, int *tmp)
 {
 	char 	*line;
 	int		i;
@@ -23,7 +23,7 @@ void		ft_oconversions(t_params ft, int str_len, t_list **lst, int *tmp)
 
 	i = 0;
 	spaces = ft.field_width - ((ft.precision > str_len) ?
-		 	ft.precision : str_len) - ((ft.flags & HASH_FLAG) ? 1 : 0);
+			ft.precision : str_len) - ((ft.flags & HASH_FLAG) ? 1 : 0);
 	if ((ft.flags & MINUS_FLAG) && (ft.field_width > ft.precision))
 	{
 		line = (char *)malloc(sizeof(char) * (spaces + 1));
@@ -46,10 +46,12 @@ int		o_conversions(t_params ft, va_list *args, t_list **lst)
 	num = ft_itoa_base_hex(arg_val, 8, 1);
 	str_len = ((arg_val == 0) && (ft.precision == 0)) ? 0 : ft_strlen(num);
 	((ft.flags & ZERO_FLAG) && (ft.precision != -1)) ?
-								ft.flags &= ~ZERO_FLAG : ft.flags;
-	ft.field_width = ft.precision > ft.field_width ? ft.precision : ft.field_width;
+						ft.flags &= ~ZERO_FLAG : ft.flags;
+	ft.field_width = ft.precision > ft.field_width ?
+						ft.precision : ft.field_width;
 	tmp = ft_before_num(ft, str_len, (ft.flags & HASH_FLAG) ? 1 : 0, lst);
-	(arg_val == 0 && ft.precision == 0) ? 0 : create_node(num, str_len + 1, lst);
+	(arg_val == 0 && ft.precision == 0) ? 0 :
+						create_node(num, str_len + 1, lst);
 	ft_oconversions(ft, str_len, lst, &tmp);
 	tmp += str_len;
 	return (tmp);

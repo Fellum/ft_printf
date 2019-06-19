@@ -6,18 +6,18 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 15:24:44 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/07 15:24:53 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 20:02:01 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int is_flag(char c)
+int		is_flag(char c)
 {
 	return (c == ' ' || c == '0' || c == '#' || c == '+' || c == '-');
 }
 
-int get_flags(const char **format)
+int		get_flags(const char **format)
 {
 	int res;
 

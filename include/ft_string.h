@@ -1,11 +1,19 @@
-//
-// Created by fellum on 6/8/19.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_string.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 19:29:00 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/06/19 20:08:18 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef EXPANDABLE_STRING_FT_STRING_H
-#define EXPANDABLE_STRING_FT_STRING_H
+# define EXPANDABLE_STRING_FT_STRING_H
+# include <stdlib.h>
 
-#include <stdlib.h>
 char	*ft_strnew(size_t size);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 char	*ft_strncpy(char *dst, const char *src, size_t len);
@@ -20,4 +28,4 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 char	*fill_with_chars(int num, char c);
 
-#endif //EXPANDABLE_STRING_FT_STRING_H
+#endif

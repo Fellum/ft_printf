@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   c_conversions.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 19:30:39 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/06/19 20:01:34 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "ft_string.h"
 
-int	c_conversions(t_params ft, va_list *args, t_list **lst)
+int		c_conversions(t_params ft, va_list *args, t_list **lst)
 {
 	char	space_char;
-	char 	*res;
+	char	*res;
 
 	if (ft.field_width < 2)
 	{

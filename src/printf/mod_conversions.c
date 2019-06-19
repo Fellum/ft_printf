@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mod_conversions.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/06/19 19:39:46 by mcanhand          #+#    #+#             */
+/*   Updated: 2019/06/19 19:45:12 by mcanhand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include "ft_string.h"
-
-int		create_node(void *str, size_t len, t_list **lst);
 
 int	mod_conversions(t_params ft, t_list **lst)
 {
