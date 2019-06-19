@@ -4,7 +4,6 @@
 
 int		create_node(void *str, size_t len, t_list **lst);
 
-
 int	mod_conversions(t_params ft, t_list **lst)
 {
 	char	space_char;

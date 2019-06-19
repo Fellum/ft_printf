@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:59:46 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/05 13:20:11 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 15:58:21 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static	size_t	intlen(unsigned long long n, int base)
 	return (len);
 }
 
-char			*ft_itoa_base_hex_long(unsigned long long n, int base, int uppercase)
+char			*ft_itoa_base_hex_long(unsigned long long n, int base, int upr)
 {
 	char	*res;
 	long	len;
@@ -33,11 +33,12 @@ char			*ft_itoa_base_hex_long(unsigned long long n, int base, int uppercase)
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	barr = uppercase ? "0123456789ABCDEF" : "0123456789abcdef";
+	barr = upr ? "0123456789ABCDEF" : "0123456789abcdef";
 	len = intlen(n, base);
 	res = ft_strnew(len);
 	if (!res)
 		return (NULL);
+	res[len] = '\0';
 	while (len)
 	{
 		res[--len] = barr[(n % base)];

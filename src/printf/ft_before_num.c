@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 16:34:14 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/13 16:48:53 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/19 18:33:32 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	place_zero(char c, t_params ft, int *i, char *str)
 	}
 }
 
-char	*ft_other_flags(t_params ft, int str_len, int hash, int spaces)
+char	*ft_other_flags(t_params ft, int str_len, int hash, int sp)
 {
 	int		i;
 	char	space_char;
@@ -57,19 +57,22 @@ char	*ft_other_flags(t_params ft, int str_len, int hash, int spaces)
 
 	i = 0;
 	space_char = (ft.flags & ZERO_FLAG) && !(ft.flags & MINUS_FLAG) ? '0' : ' ';
-	lengh = ((ft.conversion == 'o') ? 0 : hash) + ((str_len > ft.precision) ?
-				0 : ft.precision - str_len);
-	if (!(str = (char *)malloc(sizeof(char) * (((spaces > 0) ? spaces : 0) + lengh + 1))))
-		return (NULL);
+	lengh = hash + ((str_len > ft.precision) ? 0 : ft.precision - str_len);
+	if ((((sp > 0) ? sp : 0) + lengh + 1) > 1)
+		str = (char *)malloc(sizeof(char) * (((sp > 0) ? sp : 0) + lengh + 1));
+	else
+		str = NULL;
 	(ft.conversion == 'o') ? place_hash('0', ft, &i, str)
 			: place_zero('0', ft, &i, str);
-	while (i < spaces)
+	while (i < sp)
 		str[i++] = space_char;
 	(ft.conversion == 'o') ? place_hash(' ', ft, &i, str)
 			: place_zero(' ', ft, &i, str);
-	while (i < spaces + lengh)
-		str[i++] = '0';
-	str[i] = '\0';
+	if (i < sp + lengh)
+		while (i < sp + lengh)
+			str[i++] = '0';
+	if (i)
+		str[i] = '\0';
 	return (str);
 }
 
@@ -101,16 +104,3 @@ int		ft_before_num(t_params ft, int str_len, int hash, t_list **lst)
 	}
 	return (i);
 }
-
-
-// //SSSS
-
-// 	space_char = (ft.flags & ZERO_FLAG) && !(ft.flags & MINUS_FLAG) ? '0' : ' ';
-// 	str_len = ft_strlen(arg_val);
-// 	str_len = ft.precision != -1 && ft.precision < str_len ? ft.precision : str_len;
-// 	if (!(ft.flags & MINUS_FLAG))
-// 	{
-// 		if ((tmp = fill_with_chars(ft.field_width - str_len, space_char)) == -1)
-// 			return (tmp);
-// 		res += tmp;
-// 	}
