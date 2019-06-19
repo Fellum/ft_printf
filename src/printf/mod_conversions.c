@@ -1,6 +1,5 @@
 #include "ft_printf.h"
 #include "ft_string.h"
-#include "misc.h"
 
 int		create_node(void *str, size_t len, t_list **lst);
 

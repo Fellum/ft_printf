@@ -3,7 +3,6 @@
 
 char		*make_double(double val, int precision);
 char		*make_ldouble(long double val, int precision);
-char		*make_float(float val, int precision);
 
 char	*get_float(t_params params, va_list *args)
 {

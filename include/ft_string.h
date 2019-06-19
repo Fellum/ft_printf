@@ -16,5 +16,8 @@ char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strcpy(char *dest, const char *src);
 void	*ft_realloc(void *mem, size_t old_size, size_t new_size);
 char	*ft_strappend(char *s1, char *s2);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
+char	*fill_with_chars(int num, char c);
 
 #endif //EXPANDABLE_STRING_FT_STRING_H

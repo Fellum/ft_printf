@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "misc.h"
+#include "ft_string.h"
+#include <stdlib.h>
 
 char	*get_float(t_params params, va_list *args);
 

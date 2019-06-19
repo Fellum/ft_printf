@@ -1,6 +1,5 @@
 #include "ft_printf.h"
 #include "ft_string.h"
-#include "misc.h"
 
 int	c_conversions(t_params ft, va_list *args, t_list **lst)
 {

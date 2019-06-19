@@ -9,7 +9,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdarg.h>
-#include "misc.h"
 #include "ft_list.h"
 
 # define HASH_FLAG 1U

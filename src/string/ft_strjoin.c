@@ -25,7 +25,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	i = ft_strlen(s1) + ft_strlen(s2);
 	if (!(frsh = (char *)malloc(i + 1)))
 	{
-		ft_memdel((void *)frsh);
+		free(frsh);
 		return (NULL);
 	}
 	i = 0;
