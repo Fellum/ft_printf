@@ -19,9 +19,9 @@ int		print_conversion(t_params formating, va_list *args, t_list **lst)
 {
 	if (formating.conversion == 'c')
 		return (c_conversions(formating, args, lst));
-	// else if (formating.conversion == '%')
-	// 	return (mod_conversion(formating));
-	else if (formating.conversion == 'd')
+	else if (formating.conversion == '%')
+	 	return (mod_conversions(formating, lst));
+	else if (formating.conversion == 'd' || formating.conversion == 'i')
 		return (d_conversions(formating, args, lst));
 	else if (formating.conversion == 's')
 	 	return (s_conversions(formating, args, lst));

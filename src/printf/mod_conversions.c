@@ -1,8 +1,11 @@
 #include "ft_printf.h"
-#include "ft_string.h
+#include "ft_string.h"
 #include "misc.h"
 
-int	c_conversions(t_params ft, va_list *args, t_list **lst)
+int		create_node(void *str, size_t len, t_list **lst);
+
+
+int	mod_conversions(t_params ft, t_list **lst)
 {
 	char	space_char;
 	char 	*res;

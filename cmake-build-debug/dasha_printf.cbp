@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="dasha_printf"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dasha_printf">
+				<Option output="/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/dasha_printf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/include"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src/list"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src/printf"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src/string"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 dasha_printf"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dasha_printf/fast">
+				<Option output="/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/dasha_printf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir=""/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/include"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src/list"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src/printf"/>
+					<Add directory="/Users/jleann/CLionProjects/dasha_printf/src/string"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 dasha_printf/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/jleann/CLionProjects/dasha_printf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/conversions.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/float_to_str.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/floats.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/ft_list.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/ft_printf.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/ft_string.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/large_arythmetics.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/libft.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/include/misc.h">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/main.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/list/ft_create_node.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/list/ft_lstadd.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/list/ft_lstnew.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/c_conversions.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/conversion_flags.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/convert_flags.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/d_conversions.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/f_conversion.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/fill_with_chars.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/float_to_str.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_after_num.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_before_num.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_bzero.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_itoa_base.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_itoa_base_hex..c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_itoa_base_hex_long.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_memdel.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_memset.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_numlgh.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_numlgh_long.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_printf.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_putnbr.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/ft_putnbr_u.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/get_conv_glags.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/get_conversion.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/get_flags.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/get_float.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/get_sizes.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/large_arythmetics.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/make_double.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/make_float.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/make_ldouble.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/mod_conversions.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/o_conversions.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/p_conversions.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/print_conversion.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/s_conversion.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/u_conversion.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/printf/x_conversions.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_lst_to_str.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_memcpy.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strchr.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strcpy.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strdup.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strjoin.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strlen.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strncpy.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strnew.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/src/string/ft_strsub.c">
+			<Option target="dasha_printf"/>
+		</Unit>
+		<Unit filename="/Users/jleann/CLionProjects/dasha_printf/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
