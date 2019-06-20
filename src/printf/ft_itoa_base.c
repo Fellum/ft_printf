@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 12:34:08 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 20:10:32 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 14:15:45 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char			*ft_itoa_base(long long n, int bs, int up)
 	n = (n < 0) ? -n : n;
 	if (!res)
 		return (NULL);
+	res[len] = '\0';
 	while (len--)
 	{
 		res[--i] = barr[(n % bs)];

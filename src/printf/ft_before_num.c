@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 16:34:14 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 18:33:32 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 14:50:10 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ int		ft_before_num(t_params ft, int str_len, int hash, t_list **lst)
 	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces;
 	if (ft.conversion == 's' && ft.conversion == 'c')
 	{
-		str = (char *)malloc(sizeof(char) * (spaces + 1));
+		if ((spaces + 1) > 1)
+			str = (char *)malloc(sizeof(char) * (spaces + 1));
 		while (i < spaces)
 			str[i++] = space_char;
 		str[i] = '\0';

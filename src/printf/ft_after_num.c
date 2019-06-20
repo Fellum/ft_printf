@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 19:31:59 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 19:33:00 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 14:43:16 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ int		ft_after_num(t_params ft, int str_len, t_list **lst, int hash)
 				ft.precision : str_len) - hash;
 	if ((ft.flags & MINUS_FLAG) && (ft.field_width > ft.precision))
 	{
-		if (!(str = (char *)malloc(sizeof(char) * (spaces + 1))))
-			return (-1);
-		while (i < spaces)
-			str[i++] = ' ';
-		str[i] = '\0';
-		create_node(str, spaces + 1, lst);
+		if (spaces + 1 > 1)
+		{
+			if (!(str = (char *)malloc(sizeof(char) * (spaces + 1))))
+				return (-1);
+			while (i < spaces)
+				str[i++] = ' ';
+			str[i] = '\0';
+			create_node(str, spaces + 1, lst);
+		}
 	}
 	return (i);
 }

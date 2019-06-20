@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 15:18:31 by jleann            #+#    #+#             */
-/*   Updated: 2019/06/19 19:38:07 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 15:01:53 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		free_lst(t_list *lst)
 {
 	t_list	*tmp;
 
-	while (lst)
+	while (lst->content)
 	{
 		tmp = lst->next;
 		free(lst->content);
@@ -85,8 +85,9 @@ int			ft_printf(const char *format, ...)
 	main_loop(format, &args, res_lst);
 	tmp_str = ft_lst_to_str(res_lst);
 	res = write(1, tmp_str, calc_string_len(res_lst));
-	if (res_lst->content)
+	// if (res_lst->next->content != NULL)
 		free_lst(res_lst);
+	// free(res_lst);
 	free(tmp_str);
 	va_end(args);
 	return (res);
