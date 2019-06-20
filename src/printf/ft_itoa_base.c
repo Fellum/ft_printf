@@ -28,9 +28,10 @@ static size_t	intlen(long long int n, int base)
 char			*ft_itoa_base(long long n, int bs, int up)
 {
 	char	*res;
-	long	len;
+	int	len;
 	char	*barr;
 	int		i;
+	unsigned long long	tmp;
 
 	i = 0;
 	if (n == 0)
@@ -38,21 +39,21 @@ char			*ft_itoa_base(long long n, int bs, int up)
 	barr = up ? "0123456789ABCDEF" : "0123456789abcdef";
 	len = intlen(n, bs);
 	res = ft_strnew(len);
-	i = len;
-	if (n <= -9223372036854775807)
-	{
-		n += 9000000000000000000;
-		res[0] = '9';
-		len--;
-	}
-	n = (n < 0) ? -n : n;
 	if (!res)
 		return (NULL);
-	res[len] = '\0';
+	i = len;
+	tmp = n > 0 ? n : -n;
+//	if (n <= -9223372036854775807)
+//	{
+//		n += 9000000000000000000;
+//		res[0] = '9';
+//		len--;
+//	}
+//	n = (n < 0) ? -n : n;
 	while (len--)
 	{
-		res[--i] = barr[(n % bs)];
-		n /= bs;
+		res[--i] = barr[(tmp % bs)];
+		tmp /= bs;
 	}
 	return (res);
 }

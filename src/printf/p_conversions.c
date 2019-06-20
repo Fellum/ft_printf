@@ -22,17 +22,16 @@ int		p_conversions(t_params ft, va_list *args, t_list **lst)
 	char			*num2;
 	int				str_len;
 
-	tmp = 0;
 	arg_val = va_arg(*args, long long int);
 	num = ft_itoa_base(arg_val, 16, 0);
-	num2 = "0x";
-	num = ft_strjoin(num2, num);
-	str_len = ft_strlen(num);
+	num2 = ft_strjoin("0x", num);
+	free(num);
+	str_len = ft_strlen(num2);
 	((ft.flags & ZERO_FLAG) && (ft.precision != -1)) ?
 								ft.flags &= ~ZERO_FLAG : ft.flags;
 	ft.flags &= ~HASH_FLAG;
 	ft_before_num(ft, str_len, 0, lst);
-	create_node(num, str_len + 1, lst);
+	create_node(num2, str_len + 1, lst);
 	if ((tmp = ft_after_num(ft, str_len, lst, 0)) == -1)
 		return (tmp);
 	tmp += str_len;

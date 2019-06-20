@@ -19,24 +19,23 @@ int		before_num(t_params ft, int str_len, long long arg_val, t_list **lst)
 	char	space_char;
 	int		spaces;
 	char	*str;
-	int		i;
 	int		tmp;
 
-	i = 0;
-	tmp = 0;
 	space_char = (ft.flags & ZERO_FLAG) ? '0' : ' ';
 	spaces = ft.field_width - ((str_len > ft.precision) ? str_len : ft.precision)
 			- ((ft.flags & PLUS_FLAG) || (arg_val < 0) ||
 			(ft.flags & SPACE_FLAG));
 	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces;
-	str = fill_with_chars(spaces, space_char);
-	if ((tmp = create_node(str, spaces + 1, lst)) == -1)
-		return (tmp);
-	i--;
+	if (spaces > 0)
+	{
+		str = fill_with_chars(spaces, space_char);
+		if ((tmp = create_node(str, spaces + 1, lst)) == -1)
+			return (tmp);
+	}
 	if (((ft.flags & PLUS_FLAG) || (arg_val < 0)) && !(ft.flags & ZERO_FLAG))
 		if ((tmp = create_node((arg_val < 0) ? ft_strdup("-") : ft_strdup("+"), 2, lst)) == -1)
 			return (tmp);
-	return (((i + tmp) > 0) ? (i + tmp) : 0);
+	return (1);
 }
 
 int		ft_dconversion(t_params ft, int str_len, long long arg_val, t_list **lst)
@@ -59,7 +58,7 @@ int		ft_dconversion(t_params ft, int str_len, long long arg_val, t_list **lst)
 		if ((tmp = create_node(str, ft.precision - str_len + 1, lst)) == -1)
 			return (tmp);
 	}
-	return (spaces + i);
+	return (1);
 }
 
 int		ft_print_sign(unsigned flags, intmax_t arg_val, t_list **lst)
