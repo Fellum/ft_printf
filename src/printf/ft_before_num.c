@@ -88,20 +88,7 @@ int		ft_before_num(t_params ft, int str_len, int hash, t_list **lst)
 	spaces = ft.field_width - ((str_len > ft.precision) ?
 				str_len : ft.precision) - hash;
 	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces;
-	if (ft.conversion == 's' && ft.conversion == 'c')
-	{
-		if ((spaces + 1) > 1)
-			str = (char *)malloc(sizeof(char) * (spaces + 1));
-		while (i < spaces)
-			str[i++] = space_char;
-		str[i] = '\0';
-		create_node(str, spaces + 1, lst);
-		return (0);
-	}
-	else
-	{
-		if ((str = ft_other_flags(ft, str_len, hash, spaces)))
-			create_node(str, ft_strlen(str) + 1, lst);
-	}
+	if ((str = ft_other_flags(ft, str_len, hash, spaces)))
+		create_node(str, ft_strlen(str) + 1, lst);
 	return (i);
 }

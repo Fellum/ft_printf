@@ -28,7 +28,7 @@ static	size_t	intlen(unsigned long long n, int base)
 char			*ft_itoa_base_hex_long(unsigned long long n, int base, int upr)
 {
 	char	*res;
-	long	len;
+	int	len;
 	char	*barr;
 
 	if (n == 0)
@@ -38,7 +38,6 @@ char			*ft_itoa_base_hex_long(unsigned long long n, int base, int upr)
 	res = ft_strnew(len);
 	if (!res)
 		return (NULL);
-	res[len] = '\0';
 	while (len)
 	{
 		res[--len] = barr[(n % base)];

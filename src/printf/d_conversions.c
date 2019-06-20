@@ -29,19 +29,12 @@ int		before_num(t_params ft, int str_len, long long arg_val, t_list **lst)
 			- ((ft.flags & PLUS_FLAG) || (arg_val < 0) ||
 			(ft.flags & SPACE_FLAG));
 	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces;
-	if (!(str = (char *)malloc(sizeof(char) * spaces + 1)))
-		free(str);
-	else
-	{
-		while (i < spaces)
-			str[i++] = space_char;
-		str[i] = '\0';
-		if ((tmp = create_node(str, spaces + 1, lst)) == -1)
-			return (tmp);
-		i--;
-	}
+	str = fill_with_chars(spaces, space_char);
+	if ((tmp = create_node(str, spaces + 1, lst)) == -1)
+		return (tmp);
+	i--;
 	if (((ft.flags & PLUS_FLAG) || (arg_val < 0)) && !(ft.flags & ZERO_FLAG))
-		if ((tmp = create_node((arg_val < 0) ? "-" : "+", 2, lst)) == -1)
+		if ((tmp = create_node((arg_val < 0) ? ft_strdup("-") : ft_strdup("+"), 2, lst)) == -1)
 			return (tmp);
 	return (((i + tmp) > 0) ? (i + tmp) : 0);
 }
@@ -69,17 +62,17 @@ int		ft_dconversion(t_params ft, int str_len, long long arg_val, t_list **lst)
 	return (spaces + i);
 }
 
-int		ft_print_sign(int flags, intmax_t arg_val, t_list **lst)
+int		ft_print_sign(unsigned flags, intmax_t arg_val, t_list **lst)
 {
 	int		tmp;
 
 	tmp = 0;
 	if (((flags & PLUS_FLAG) || (arg_val < 0)) && (flags & ZERO_FLAG))
-		if ((tmp = (arg_val < 0) ? create_node("-", 2, lst) :
-			create_node("+", 2, lst) == -1))
+		if ((tmp = (arg_val < 0) ? create_node(ft_strdup("-"), 2, lst) :
+			create_node(ft_strdup("+"), 2, lst) == -1))
 				return (tmp);
 	if ((flags & SPACE_FLAG) && !((flags & PLUS_FLAG) || (arg_val < 0)))
-		if ((tmp = create_node(" ", 2, lst) == -1))
+		if ((tmp = create_node(ft_strdup(" "), 2, lst) == -1))
 			return (tmp);
 	return (tmp);
 }

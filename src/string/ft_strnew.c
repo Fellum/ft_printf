@@ -14,7 +14,11 @@
 
 char	*ft_strnew(size_t size)
 {
+	char *res;
+
 	if (size == (size_t)(-1))
 		return (NULL);
-	return (malloc(size + 1));
+	res = malloc(size + 1);
+	res[size] = '\0';
+	return (res);
 }

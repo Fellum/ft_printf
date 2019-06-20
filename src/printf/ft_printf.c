@@ -19,7 +19,7 @@ void		free_lst(t_list *lst)
 {
 	t_list	*tmp;
 
-	while (lst->content)
+	while (lst)
 	{
 		tmp = lst->next;
 		free(lst->content);
@@ -85,9 +85,7 @@ int			ft_printf(const char *format, ...)
 	main_loop(format, &args, res_lst);
 	tmp_str = ft_lst_to_str(res_lst);
 	res = write(1, tmp_str, calc_string_len(res_lst));
-	// if (res_lst->next->content != NULL)
-		free_lst(res_lst);
-	// free(res_lst);
+	free_lst(res_lst);
 	free(tmp_str);
 	va_end(args);
 	return (res);
