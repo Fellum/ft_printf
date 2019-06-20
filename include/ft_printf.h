@@ -53,7 +53,7 @@ int					ft_before_num(t_params ft, int str_len, int hash,
 									t_list **lst);
 int					ft_after_num(t_params ft, int str_len, t_list **lst,
 									int hash);
-char				*make_double(double val, int precision);
-char				*make_ldouble(long double val, int precision);
+char		*make_double(double val, int precision);
+char		*make_ldouble(long double val, int precision);
 
 #endif

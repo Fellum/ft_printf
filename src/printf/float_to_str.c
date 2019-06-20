@@ -118,7 +118,7 @@ char	*int_part_to_str(unsigned *longnum)
 	cur_seg = longnum[0];
 	tmp = calc_uint_len(longnum[cur_seg]) + 9 * (cur_seg - 1);
 	tmp = tmp ? tmp : 1;
-	res = (char *)malloc(tmp + 1);
+	res = ft_strnew(tmp);
 	if (!res)
 		return (NULL);
 	cur_pos = 0;

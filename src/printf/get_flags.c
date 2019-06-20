@@ -19,7 +19,7 @@ int		is_flag(char c)
 
 int		get_flags(const char **format)
 {
-	int res;
+	unsigned res;
 
 	res = 0;
 	while (**format && is_flag(**format))

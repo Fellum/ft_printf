@@ -21,18 +21,18 @@ add_executable(ft_printf_new
         src/printf/conversion_flags.c
         src/printf/convert_flags.c
         src/printf/d_conversions.c
-        src/printf/f_conversion.c
+        src/printf/div_10_longnum.c
+        src/printf/f_conversions.c
         src/printf/float_to_str.c
         src/printf/ft_after_num.c
         src/printf/ft_before_num.c
         src/printf/ft_itoa_base.c
-        src/printf/ft_itoa_base_hex..c
         src/printf/ft_itoa_base_hex_long.c
         src/printf/ft_printf.c
         src/printf/get_conv_glags.c
         src/printf/get_conversion.c
+        src/printf/get_first_digit.c
         src/printf/get_flags.c
-        src/printf/get_float.c
         src/printf/get_sizes.c
         src/printf/large_arythmetics.c
         src/printf/make_double.c
@@ -42,6 +42,7 @@ add_executable(ft_printf_new
         src/printf/p_conversions.c
         src/printf/print_conversion.c
         src/printf/s_conversion.c
+        src/printf/sum_longnum.c
         src/printf/u_conversion.c
         src/printf/x_conversions.c
         src/string/fill_with_chars.c
