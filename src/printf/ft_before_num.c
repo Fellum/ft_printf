@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 16:34:14 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 14:50:10 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 17:31:56 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_other_flags(t_params ft, int str_len, int hash, int sp)
 	space_char = (ft.flags & ZERO_FLAG) && !(ft.flags & MINUS_FLAG) ? '0' : ' ';
 	lengh = hash + ((str_len > ft.precision) ? 0 : ft.precision - str_len);
 	if ((((sp > 0) ? sp : 0) + lengh + 1) > 1)
-		str = (char *)malloc(sizeof(char) * (((sp > 0) ? sp : 0) + lengh + 1));
+		str = ft_strnew(((sp > 0) ? sp : 0) + lengh);
 	else
 		str = NULL;
 	(ft.conversion == 'o') ? place_hash('0', ft, &i, str)
@@ -71,24 +71,18 @@ char	*ft_other_flags(t_params ft, int str_len, int hash, int sp)
 	if (i < sp + lengh)
 		while (i < sp + lengh)
 			str[i++] = '0';
-	if (i)
-		str[i] = '\0';
 	return (str);
 }
 
 int		ft_before_num(t_params ft, int str_len, int hash, t_list **lst)
 {
-	int		i;
 	char	*str;
-	char	space_char;
 	int		spaces;
 
-	i = 0;
-	space_char = (ft.flags & ZERO_FLAG) && !(ft.flags & MINUS_FLAG) ? '0' : ' ';
 	spaces = ft.field_width - ((str_len > ft.precision) ?
 				str_len : ft.precision) - hash;
 	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces;
 	if ((str = ft_other_flags(ft, str_len, hash, spaces)))
 		create_node(str, ft_strlen(str) + 1, lst);
-	return (i);
+	return (1);
 }

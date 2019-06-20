@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   make_double.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleann <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 18:40:40 by jleann            #+#    #+#             */
-/*   Updated: 2019/06/06 18:40:41 by jleann           ###   ########.fr       */
+/*   Updated: 2019/06/20 18:21:07 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ unsigned	*fill_integer_d(unsigned long mask, int exp, unsigned long mant)
 char		*make_double(double val, int precision)
 {
 	t_double_cast		tmp;
-	unsigned		*integer_part;
-	unsigned		*float_part;
-	char			*res;
+	unsigned			*integer_part;
+	unsigned			*float_part;
+	char				*res;
 
 	res = NULL;
 	tmp.f = val;

@@ -6,18 +6,18 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 19:38:22 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 19:55:38 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 18:04:52 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int is_conv_flag(char c)
+int			is_conv_flag(char c)
 {
 	return (c == 'l' || c == 'L' || c == 'h' || c == 'j' || c == 'z');
 }
 
-int comp_flag_ll(const char **format)
+int			comp_flag_ll(const char **format)
 {
 	if (*(*format + 1) == 'l')
 	{
@@ -28,7 +28,7 @@ int comp_flag_ll(const char **format)
 		return (LO_FLAG);
 }
 
-int comp_flag_hh(const char **format)
+int			comp_flag_hh(const char **format)
 {
 	if (*(*format + 1) == 'h')
 	{
@@ -39,7 +39,7 @@ int comp_flag_hh(const char **format)
 		return (H_FLAG);
 }
 
-unsigned get_conv_flags(const char **format)
+unsigned	get_conv_flags(const char **format)
 {
 	int res;
 

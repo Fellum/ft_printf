@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 13:55:31 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 20:03:09 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 18:17:42 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ int		p_conversions(t_params ft, va_list *args, t_list **lst)
 	create_node(num2, str_len + 1, lst);
 	if ((tmp = ft_after_num(ft, str_len, lst, 0)) == -1)
 		return (tmp);
-	tmp += str_len;
 	return (tmp);
 }

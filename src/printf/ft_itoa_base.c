@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 12:34:08 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 14:15:45 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 17:41:11 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static size_t	intlen(long long int n, int base)
 
 char			*ft_itoa_base(long long n, int bs, int up)
 {
-	char	*res;
-	int	len;
-	char	*barr;
-	int		i;
+	char				*res;
+	int					len;
+	char				*barr;
+	int					i;
 	unsigned long long	tmp;
 
 	i = 0;
@@ -43,13 +43,6 @@ char			*ft_itoa_base(long long n, int bs, int up)
 		return (NULL);
 	i = len;
 	tmp = n > 0 ? n : -n;
-//	if (n <= -9223372036854775807)
-//	{
-//		n += 9000000000000000000;
-//		res[0] = '9';
-//		len--;
-//	}
-//	n = (n < 0) ? -n : n;
 	while (len--)
 	{
 		res[--i] = barr[(tmp % bs)];

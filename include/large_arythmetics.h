@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   large_arythmetics.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleann <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/06 19:21:57 by jleann            #+#    #+#             */
-/*   Updated: 2019/06/06 19:21:59 by jleann           ###   ########.fr       */
+/*   Updated: 2019/06/20 17:51:45 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,7 @@ void		mul_dig_longnum(unsigned *num, unsigned char dig, unsigned *dst);
 void		div_10_longnum(unsigned *num);
 void		apply_precision(unsigned *f_part, unsigned *i_part, int precision);
 int			calc_uint_len(unsigned num);
+int			get_first_dig(unsigned num);
+void		div_10_longnum(unsigned *num);
+void		sum_longnum(unsigned *left, unsigned *right, unsigned *dst);
 #endif

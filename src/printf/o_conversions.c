@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 12:28:10 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 12:47:08 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 18:15:52 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include "conversions.h"
 #include "libft.h"
 
-void	ft_oconversions(t_params ft, int str_len, t_list **lst, int *tmp)
+void	ft_oconversions(t_params ft, int str_len, t_list **lst)
 {
-	char 	*line;
+	char	*line;
 	int		i;
 	int		spaces;
 
@@ -32,7 +32,6 @@ void	ft_oconversions(t_params ft, int str_len, t_list **lst, int *tmp)
 		line[i] = '\0';
 		create_node(line, spaces + 1, lst);
 	}
-	*tmp += i;
 }
 
 int		o_conversions(t_params ft, va_list *args, t_list **lst)
@@ -43,10 +42,7 @@ int		o_conversions(t_params ft, va_list *args, t_list **lst)
 	int					str_len;
 
 	arg_val = convert_flags_u(ft.flags, args);
-	if (ft.flags & LO_FLAG || ft.flags & LLO_FLAG)
-		num = ft_itoa_base_hex_long(arg_val, 8, 1);
-	else
-		num = ft_itoa_base_hex(arg_val, 8, 1);
+	num = ft_itoa_base_hex_long(arg_val, 8, 1);
 	str_len = ((arg_val == 0) && (ft.precision == 0)) ? 0 : ft_strlen(num);
 	((ft.flags & ZERO_FLAG) && (ft.precision != -1)) ?
 						ft.flags &= ~ZERO_FLAG : ft.flags;
@@ -57,7 +53,7 @@ int		o_conversions(t_params ft, va_list *args, t_list **lst)
 	tmp = ft_before_num(ft, str_len, (ft.flags & HASH_FLAG) ? 1 : 0, lst);
 	(arg_val == 0 && ft.precision == 0) ? 0 :
 						create_node(num, str_len + 1, lst);
-	ft_oconversions(ft, str_len, lst, &tmp);
+	ft_oconversions(ft, str_len, lst);
 	tmp += str_len;
 	return (tmp);
 }

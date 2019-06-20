@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 19:42:20 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 19:42:21 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 18:14:54 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 char	*fill_with_chars(int num, char c)
 {
 	char *str;
+
 	if (num > 0)
 	{
 		if (!(str = ft_strnew(num)))

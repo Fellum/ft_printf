@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 13:08:21 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 19:55:38 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/20 17:46:41 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,16 @@ int		x_conversions(t_params ft, va_list *args, t_list **lst)
 	int			str_len;
 
 	arg_val = convert_flags_u(ft.flags, args);
-//	if (ft.flags & LO_FLAG || ft.flags & LLO_FLAG)
-		num = ft_itoa_base_hex_long(arg_val, 16,
+	num = ft_itoa_base_hex_long(arg_val, 16,
 		(ft.conversion == 'x') ? 0 : 1);
-//	else
-//		num = ft_itoa_base_hex(arg_val, 16, (ft.conversion == 'x') ? 0 : 1);
 	(arg_val == 0) ? ft.flags &= ~HASH_FLAG : ft.flags;
 	str_len = ((arg_val == 0) && (ft.precision == 0)) ? 0 : ft_strlen(num);
 	((ft.flags & ZERO_FLAG) && (ft.precision != -1)) ?
 								ft.flags &= ~ZERO_FLAG : ft.flags;
 	ft_before_num(ft, str_len, (ft.flags & HASH_FLAG) ? 2 : 0, lst);
 	create_node(num, str_len + 1, lst);
-	if ((tmp = ft_after_num(ft, str_len, lst, (ft.flags & HASH_FLAG) ? 2 : 0)) == -1)
+	if ((tmp = ft_after_num(ft, str_len, lst,
+			(ft.flags & HASH_FLAG) ? 2 : 0)) == -1)
 		return (tmp);
 	tmp += str_len;
 	return (tmp);
