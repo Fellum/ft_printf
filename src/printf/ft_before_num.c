@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 16:34:14 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 17:31:56 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/21 15:52:38 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,16 @@ int		ft_before_num(t_params ft, int str_len, int hash, t_list **lst)
 {
 	char	*str;
 	int		spaces;
+	int		hashor;
 
+	hashor = hash;
 	spaces = ft.field_width - ((str_len > ft.precision) ?
-				str_len : ft.precision) - hash;
-	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces;
-	if ((str = ft_other_flags(ft, str_len, hash, spaces)))
+				str_len : ft.precision);
+	if ((ft.conversion == 'x' || ft.conversion == 'X') &&
+					ft.flags & HASH_FLAG && (spaces == 0))
+		hash = ((ft.flags & ZERO_FLAG) && !(ft.flags & MINUS_FLAG)) ? 2 : 0;
+	spaces = (ft.flags & MINUS_FLAG) ? 0 : spaces - hash;
+	if ((str = ft_other_flags(ft, str_len, hashor, spaces)))
 		create_node(str, ft_strlen(str) + 1, lst);
 	return (1);
 }

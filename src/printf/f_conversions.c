@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 19:18:58 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 16:40:37 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/21 15:56:52 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int		calc_min_chars(t_params ft, long double val, size_t len)
 
 void	left_part(t_params ft, long double val, size_t len, t_list **lst)
 {
-	int min_chars;
-	char *spaces;
-	char tmp;
+	int		min_chars;
+	char	*spaces;
+	char	tmp;
 
 	min_chars = calc_min_chars(ft, val, len);
 	if (ft.flags & MINUS_FLAG || ft.flags & ZERO_FLAG)
@@ -55,8 +55,8 @@ void	left_part(t_params ft, long double val, size_t len, t_list **lst)
 
 void	right_part(t_params ft, long double val, size_t len, t_list **lst)
 {
-	int min_chars;
-	char *spaces;
+	int		min_chars;
+	char	*spaces;
 
 	min_chars = calc_min_chars(ft, val, len);
 	if (ft.flags & HASH_FLAG && ft.precision == 0)
@@ -70,17 +70,16 @@ void	right_part(t_params ft, long double val, size_t len, t_list **lst)
 
 int		f_conversions(t_params ft, va_list *args, t_list **lst)
 {
-	char 		*res;
+	char		*res;
 	long double	val;
-	int 		len;
+	int			len;
 
 	ft.precision = ft.precision == -1 ? 6 : ft.precision;
 	val = ft.flags & L_FLAG ? va_arg(*args, long double) :
-		  va_arg(*args, double);
+			va_arg(*args, double);
 	res = ft.flags & L_FLAG ? make_ldouble(val, ft.precision) :
-		  make_double(val, ft.precision);
+			make_double(val, ft.precision);
 	len = ft_strlen(res);
-
 	left_part(ft, val, len, lst);
 	create_node(res, len + 1, lst);
 	right_part(ft, val, len, lst);

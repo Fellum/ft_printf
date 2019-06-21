@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 13:08:21 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 17:46:41 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/21 14:44:38 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		x_conversions(t_params ft, va_list *args, t_list **lst)
 	str_len = ((arg_val == 0) && (ft.precision == 0)) ? 0 : ft_strlen(num);
 	((ft.flags & ZERO_FLAG) && (ft.precision != -1)) ?
 								ft.flags &= ~ZERO_FLAG : ft.flags;
+	ft.field_width = ft.precision > ft.field_width ?
+						ft.precision : ft.field_width;
 	ft_before_num(ft, str_len, (ft.flags & HASH_FLAG) ? 2 : 0, lst);
 	create_node(num, str_len + 1, lst);
 	if ((tmp = ft_after_num(ft, str_len, lst,

@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 19:28:38 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 20:00:51 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/21 15:57:22 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int					ft_before_num(t_params ft, int str_len, int hash,
 									t_list **lst);
 int					ft_after_num(t_params ft, int str_len, t_list **lst,
 									int hash);
-char		*make_double(double val, int precision);
-char		*make_ldouble(long double val, int precision);
+char				*make_double(double val, int precision);
+char				*make_ldouble(long double val, int precision);
 
 #endif

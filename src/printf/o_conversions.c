@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/04 12:28:10 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/20 18:15:52 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/21 15:55:18 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	ft_oconversions(t_params ft, int str_len, t_list **lst)
 	i = 0;
 	spaces = ft.field_width - ((ft.precision > str_len) ?
 			ft.precision : str_len) - ((ft.flags & HASH_FLAG) ? 1 : 0);
-	if ((ft.flags & MINUS_FLAG) && (ft.field_width > ft.precision))
+	if ((ft.flags & MINUS_FLAG) &&
+			(ft.field_width > ft.precision) && spaces > 0)
 	{
 		line = (char *)malloc(sizeof(char) * (spaces + 1));
 		while (i < spaces)
@@ -48,7 +49,8 @@ int		o_conversions(t_params ft, va_list *args, t_list **lst)
 						ft.flags &= ~ZERO_FLAG : ft.flags;
 	ft.field_width = ft.precision > ft.field_width ?
 						ft.precision : ft.field_width;
-	if ((arg_val == 0) && (ft.flags & HASH_FLAG) && (ft.precision == -1))
+	if (((arg_val == 0) && (ft.flags & HASH_FLAG) &&
+			(ft.precision != 0)) || ft.precision > str_len)
 		(ft.flags &= ~HASH_FLAG);
 	tmp = ft_before_num(ft, str_len, (ft.flags & HASH_FLAG) ? 1 : 0, lst);
 	(arg_val == 0 && ft.precision == 0) ? 0 :
