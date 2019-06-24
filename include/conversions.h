@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/19 19:27:31 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 19:46:54 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/24 15:22:29 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			d_conversions(t_params ft, va_list *args, t_list **lst);
 int			x_conversions(t_params ft, va_list *args, t_list **lst);
 int			o_conversions(t_params ft, va_list *args, t_list **lst);
 int			u_conversions(t_params ft, va_list *args, t_list **lst);
-int			f_conversions(t_params ft, va_list *args, t_list **lst);
+void		f_conversions(t_params ft, va_list *args, t_list **lst);
 int			c_conversions(t_params ft, va_list *args, t_list **lst);
 int			s_conversions(t_params ft, va_list *args, t_list **lst);
 int			p_conversions(t_params ft, va_list *args, t_list **lst);

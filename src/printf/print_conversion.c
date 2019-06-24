@@ -6,7 +6,7 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 15:24:04 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/19 20:05:33 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/24 15:24:47 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int		print_conversion(t_params formating, va_list *args, t_list **lst)
 	else if (formating.conversion == 'p')
 		return (p_conversions(formating, args, lst));
 	else if (formating.conversion == 'f')
-		return (f_conversions(formating, args, lst));
+		f_conversions(formating, args, lst);
 	return (0);
 }

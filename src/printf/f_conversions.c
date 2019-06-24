@@ -6,16 +6,13 @@
 /*   By: mcanhand <mcanhand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 19:18:58 by mcanhand          #+#    #+#             */
-/*   Updated: 2019/06/21 15:56:52 by mcanhand         ###   ########.fr       */
+/*   Updated: 2019/06/24 15:22:49 by mcanhand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "ft_string.h"
 #include <stdlib.h>
-#include <math.h>
-#define NAN __builtin_nanf("0x7fc00000")
-
 
 void	place_sign(t_params ft, char sign, t_list **lst)
 {
@@ -77,7 +74,7 @@ void	right_part(t_params ft, long double val, size_t len, t_list **lst)
 	}
 }
 
-int		f_conversions(t_params ft, va_list *args, t_list **lst)
+void	f_conversions(t_params ft, va_list *args, t_list **lst)
 {
 	char		*res;
 	long double	val;
@@ -85,7 +82,7 @@ int		f_conversions(t_params ft, va_list *args, t_list **lst)
 
 	ft.precision = ft.precision == -1 ? 6 : ft.precision;
 	val = ft.flags & L_FLAG ? va_arg(*args, long double) :
-			va_arg(*args, double);
+					va_arg(*args, double);
 	if (val == -(1.0 / 0.0) || val == (1.0 / 0.0) || (val != 1 * val))
 	{
 		ft.flags &= ~ZERO_FLAG;
@@ -104,5 +101,4 @@ int		f_conversions(t_params ft, va_list *args, t_list **lst)
 	left_part(ft, val, len, lst);
 	create_node(res, len + 1, lst);
 	right_part(ft, val, len, lst);
-	return (0);
 }
