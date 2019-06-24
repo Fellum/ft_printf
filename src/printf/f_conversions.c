@@ -13,6 +13,9 @@
 #include "ft_printf.h"
 #include "ft_string.h"
 #include <stdlib.h>
+#include <math.h>
+#define NAN __builtin_nanf("0x7fc00000")
+
 
 void	place_sign(t_params ft, char sign, t_list **lst)
 {
@@ -28,7 +31,8 @@ int		calc_min_chars(t_params ft, long double val, size_t len)
 {
 	int min_chars;
 
-	min_chars = (val < 0 || ft.flags & SPACE_FLAG || ft.flags & PLUS_FLAG);
+	min_chars = (val < 0 || ft.flags & SPACE_FLAG ||
+				ft.flags & PLUS_FLAG || (val == 0 && 1 / val < 0));
 	min_chars += len;
 	min_chars += (ft.precision == 0 && ft.flags & HASH_FLAG);
 	return (min_chars);
@@ -40,9 +44,14 @@ void	left_part(t_params ft, long double val, size_t len, t_list **lst)
 	char	*spaces;
 	char	tmp;
 
+	if (val == 0 && 1 / val < 0)
+	{
+		ft.flags &= ~SPACE_FLAG;
+		ft.flags &= ~PLUS_FLAG;
+	}
 	min_chars = calc_min_chars(ft, val, len);
 	if (ft.flags & MINUS_FLAG || ft.flags & ZERO_FLAG)
-		place_sign(ft, val < 0, lst);
+		place_sign(ft, val < 0 || ((val == 0 && 1 / val < 0)), lst);
 	if (ft.field_width > min_chars && !(ft.flags & MINUS_FLAG))
 	{
 		tmp = ft.flags & ZERO_FLAG ? '0' : ' ';
@@ -50,7 +59,7 @@ void	left_part(t_params ft, long double val, size_t len, t_list **lst)
 		create_node(spaces, ft.field_width - min_chars + 1, lst);
 	}
 	if (!(ft.flags & MINUS_FLAG || ft.flags & ZERO_FLAG))
-		place_sign(ft, val < 0, lst);
+		place_sign(ft, (val < 0) || ((val == 0 && 1 / val < 0)), lst);
 }
 
 void	right_part(t_params ft, long double val, size_t len, t_list **lst)
@@ -77,8 +86,20 @@ int		f_conversions(t_params ft, va_list *args, t_list **lst)
 	ft.precision = ft.precision == -1 ? 6 : ft.precision;
 	val = ft.flags & L_FLAG ? va_arg(*args, long double) :
 			va_arg(*args, double);
-	res = ft.flags & L_FLAG ? make_ldouble(val, ft.precision) :
-			make_double(val, ft.precision);
+	if (val == -(1.0 / 0.0) || val == (1.0 / 0.0) || (val != 1 * val))
+	{
+		ft.flags &= ~ZERO_FLAG;
+		ft.flags &= ~HASH_FLAG;
+		if (val != 1 * val)
+		{
+			ft.flags &= ~SPACE_FLAG;
+			ft.flags &= ~PLUS_FLAG;
+		}
+		res = ft_strdup((val != 1 * val) ? "nan" : "inf");
+	}
+	else
+		res = ft.flags & L_FLAG ? make_ldouble(val, ft.precision) :
+				make_double(val, ft.precision);
 	len = ft_strlen(res);
 	left_part(ft, val, len, lst);
 	create_node(res, len + 1, lst);
